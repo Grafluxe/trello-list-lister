@@ -1,47 +1,46 @@
+//jshint esversion: 5, browser: true, jquery: true
+
 (function () {
   "use strict";
 
-  var $gxListLister = $(".gxListLister");
+  var $listerBtns = $(".trello-list-lister"),
+      $trelloLists = $(".list");
 
-  if ($gxListLister.length) {
-    if ($(".list").length === window.ListLister.$list.length) {
-      $gxListLister.toggle();
-      return;
+  if ($listerBtns.length) {
+    if ($trelloLists.length === window.ListLister.$lists.length) {
+      return $listerBtns.toggle();
     } else {
-      $gxListLister.remove();
+      $listerBtns.remove();
     }
   }
 
-  var ListLister;
+  window.ListLister = {
+    init: function () {
+      var btnHTML = "";
 
-  ListLister = function () {
-    $(function () {
-      var style = "style='margin: 5px auto; width: 96%; font-size: 12px; font-weight: 500; min-height: 22px; padding: 0; opacity: 0.8;'";
+      this.$lists = $trelloLists;
 
-      ListLister.$list = $(".list");
+      btnHTML += "<button class='trello-list-lister' ";
+      btnHTML += "style='margin: 5px auto; width: 96%; font-size: 12px; font-weight: 500; min-height: 22px; padding: 0; opacity: 0.8;' ";
+      btnHTML += "onclick='ListLister.getData(this);'>List Data</button>";
 
-      ListLister.$list.each(function (i) {
-
-        if (i < ListLister.$list.length) {
-          $(this).prepend("<button class='gxListLister' " + style + " onclick='ListLister.getData(this);'>List Data</button>");
+      $trelloLists.each($.proxy(function (i, el) {
+        if (i < $trelloLists.length) {
+          $(el).prepend(btnHTML);
         }
+      }, this));
+    },
+
+    getData: function (trelloList) {
+      var out = "";
+
+      $(trelloList).parent().find(".list-cards").children().each(function () {
+        out += "- " + $(this).find(".list-card-title")[0].lastChild.textContent + "\n";
       });
-    });
+
+      alert(out);
+    }
   };
 
-  ListLister.getData = function (list) {
-    var out = "";
-
-    $(list).parent().find(".list-cards").children().each(function () {
-      out += "- " + $(this).find(".list-card-title")[0].lastChild.textContent + "\n";
-    });
-
-    alert(out);
-  };
-
-  ListLister();
-
-  window.ListLister = ListLister;
-}(window.gx));
-
-void(0);
+  window.ListLister.init();
+}());

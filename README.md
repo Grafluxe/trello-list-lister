@@ -12,10 +12,11 @@ A bookmarklet is a browser bookmark that runs code. It allows developers to exte
 
 ## Use Case
 
-This bookmarklet can come in handy when in the following scenarios:
+This bookmarklet can come in handy when you want to create:
 
-- You want to create a changelog based on a Trello list.
-- You want to create a commit message based on a Trello list.
+- A changelog based on a Trello list.
+- A commit message based on a Trello list.
+- An email based on a Trello list.
 
 ## Install/Use It
 

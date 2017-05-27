@@ -1,6 +1,7 @@
 {
   "name": "trello-list-lister",
   "description": "This bookmarklet adds the ability to output lists from Trello cards. It integrates into the Trello UI and allows you to list cards easily.",
+  "version": "1.0.1",
   "main": "src/trello-list-lister",
   "scripts": {
     "prepare": "npm run dist -s",
@@ -11,7 +12,6 @@
   },
   "author": "Leandro Silva (http://grafluxe.com)",
   "homepage": "https://github.com/Grafluxe/trello-list-lister",
-  "version": "1.0.0",
   "license": "MIT",
   "repository": "Grafluxe/trello-list-lister.git",
   "devDependencies": {

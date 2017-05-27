@@ -4,8 +4,7 @@
   "version": "1.0.1",
   "main": "src/trello-list-lister",
   "scripts": {
-    "prepare": "npm run dist -s",
-    "dist": "npm run lint -s && npm run minify -s && npm run preamble -s",
+    "prepare": "npm run lint -s && npm run minify -s && npm run preamble -s",
     "lint": "jshint src/",
     "minify": "uglifyjs src/* -mco dist/trello-list-lister.min.js",
     "preamble": "preamble -p \"/*github.com/Grafluxe/trello-list-lister*/\n\" -o dist/trello-list-lister.min.js"

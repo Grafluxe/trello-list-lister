@@ -28,7 +28,7 @@
   }
 
   window.TrelloListLister = {
-    version: "1.0.0",
+    version: "1.0.1",
 
     init: function () {
       var $btn = $("<button>").addClass("trello-list-lister").text("List Cards").css({
@@ -58,7 +58,7 @@
 
       $listCards.each(function (i) {
         count++;
-        out += "- " + $(this).find(".list-card-title").eq(0).contents().eq(1).text() + (i < $listCards.length - 1 ? "&#10;" : "");
+        out += "- " + $(this).find(".list-card-title").eq(0).contents().eq(1).text() + (i < $listCards.length - 1 ? "\n" : "");
       });
 
       if (!this.$view) {

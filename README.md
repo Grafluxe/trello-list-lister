@@ -20,7 +20,7 @@ This bookmarklet can come in handy when you want to create:
 
 ## Install/Use It
 
-Install via [Bookmarklet Installer](http://grafluxe.com/asset/bmk?title=trello-list-lister&path=bit.ly%2F2rZFC59).
+Install via [Bookmarklet Installer](http://grafluxe.com/o/bmk?title=trello-list-lister&path=bit.ly%2F2rZFC59).
 
 ## How To Use
 
